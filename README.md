@@ -1,1 +1,1 @@
-# encrypix
+# EncryPix
