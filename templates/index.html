@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EncryPix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="header">
+        <h1>EncryPix  <i class="fas fa-lock"></i></h1>
+    </div>
+
+    <div class="content">
+        <div class="main">
+            <form action="/encrypt" method="post" enctype="multipart/form-data">
+                <label for="encrypt_image"><b>Select Image to Encrypt:</b></label>
+                <input type="file" id="encrypt_image" name="image" required>
+                <input type="text" id="encrypt_key" name="key" placeholder="Encryption Key" required>
+                <button type="submit"><i class="fas fa-lock"></i> Encrypt</button>
+            </form>
+            
+            <form action="/decrypt" method="post" enctype="multipart/form-data">
+                <label for="decrypt_image"><b>Select Image to Decrypt:</b></label>
+                <input type="file" id="decrypt_image" name="image" required>
+                <input type="text" id="decrypt_key" name="key" placeholder="Decryption Key" required>
+                <button type="submit"><i class="fas fa-unlock"></i> Decrypt</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 EncryPix. All rights reserved.</p>
+    </div>
+</body>
+</html>
